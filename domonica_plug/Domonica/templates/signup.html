@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominica Central Mart 🛒</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}?v=5">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Protest+Strike&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <section id="signup">
+          <div class="signup container top-1/2 left-1/2 align-middle items-center justify-center absolute flex lg:flex-row md:flex-row flex-col" style="transform: translate(-50% , -50%); ">
+            <div class="signup-logo">
+                <img class=" w-[300px] lg:w-[70%] md:w-[90%] md:ml-5   lg:ml-10  md:items-start lg:items-start  items-center " src="{% static 'images/20240222_171813.png' %}" alt="">
+            </div>
+            <div class="signup-form mr-5  lg:mr-10">
+              <form id="myForm" method="post" action="" data-submit-url="./Graffiti/views.py" class=" mx-auto bg-transparent   rounded-[20px] lg:rounded-[50px] border border-gray-400 w-[100%] lg:w-[100%] p-5 lg:p-11 px-10 lg:px-12 align-middle items-center justify-center text-center " >
+                {% csrf_token %}
+                <div class="form-layout w-[250px] lg:w-[350px]" >
+                  <div class="form flex flex-col mt-4">
+                    <label for="{{ form.name.id_for_label }}"><input type="name" placeholder="Full Name" required class="border rounded px-3 w-full py-2 text-gray-900 font-semibold focus:outline-[#00E1ff]"></label>
+                    <div class="name text-white">{{ form.name }}</div>
+                  </div>
+                  <div class="form flex flex-col mt-4">
+                    <label for="{{ form.name.id_for_label }}"><input type="email" placeholder="Email Address" required class="w-full border rounded px-3 py-2 text-gray-900 font-semibold focus:outline-[#00E1ff]"></label>
+                    <div class="name text-white">{{ form.email }}</div>
+                  </div>
+                  <div class="form flex flex-col mt-4">
+                    <label for="{{ form.number.id_for_label }}"><input type="name" placeholder="Phone Number" required class="w-full border rounded px-3 py-2 text-gray-900 font-semibold focus:outline-[#00E1ff]"></label>
+                    <div class="number text-white">{{ form.number }}</div>
+                  </div>
+                  <div class="form flex flex-col mt-4">
+                    <label for="{{ form.name.id_for_label }}"><input type="name" placeholder="Password" required class="w-full border rounded px-3 py-2 text-gra-900 font-semibold focus:outline-[#00E1ff]"></label>
+                    <div class="name text-white">{{ form.name }}</div>
+                  </div>
+                  <div class="form flex flex-col mt-4">
+                    <label for="{{ form.name.id_for_label }}"><input type="name" placeholder="Confirm Password" required class="w-full border rounded px-3 py-2 text-gray-900 font-semibold focus:outline-[#00E1ff]"></label>
+                    <div class="name text-white">{{ form.name }}</div>
+                  </div>
+                  <div class="form flex flex-col mt-4">
+                    <label for="{{ form.email.id_for_label }}">{{ form.email.label_tag }}</label>
+                    <div class="email text-white">{{ form.email }}</div>
+                  </div>
+                  <div class="form flex flex-col mt-4">
+                    <label for="{{ form.message.id_for_label }}">{{ form.message.label_tag }}</label>
+                    <div class="message text-white">{{ form.message }}</div>
+                  </div>
+              
+      
+                <!-- Submit button -->
+                <input type="submit" value="Sign Up" class="w-full bg-[#00E1ff] hover:bg-white transition-colors duration-500 ease-in-out hover:text-[#00E1ff] text-white p-2 rounded-md cursor-pointer text-2xl font-semibold font-mono">
+                <h1  class="text-white pt-3 font-sans text-[12px]  lg:text-[15px]">Already have an account? <a href="#" class="text-gray-500 hover:text-[#00E1ff] font-bold text-center">Sign in</a> here.</h1>
+              </form>
+            </div>
+          </div>
+    </section>
+
+    <style>
+      /* Style for the container holding the input field and toggle button */
+      .password-container {
+        margin-bottom: 2rem;
+      }
+      /* Style for the toggle button */
+      .toggle-password {
+        position: absolute;
+        cursor: pointer;
+      }
+    </style>
+    </head>
+    <body>
+    
+    <!-- Container for password field and toggle button 
+    <div class="password-container bg-white"  style="border: 3px solid black; width: 250px;">
+     Password field
+      <input type="password" id="password" placeholder="Enter Password" class="bg-white focus:outline-none hidden" > 
+   Toggle button to show/hide password 
+      <span class="toggle-password" onclick="togglePasswordVisibility()">
+        Show
+      </span>
+    </div>-->
+    
+    <script>
+    // Function to toggle password visibility
+    function togglePasswordVisibility() {
+      var passwordField = document.getElementById("password");
+      var toggleButton = document.querySelector(".toggle-password");
+    
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        toggleButton.textContent = "Hide";
+      } else {
+        passwordField.type = "password";
+        toggleButton.textContent = "Show";
+      }
+    }
+    </script>
+    
+    
+</body>
+</html>

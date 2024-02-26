@@ -1,0 +1,21 @@
+/*
+dark - #00414A
+light - #00E1ff 
+*/
+
+/* Signup Section */
+
+body {
+    background-image: url(../static/images/20240213_100151.jpg);
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+ }
+
+ #signup .signup .signup-logo .signup-info p {
+    font-family: 'Work Sans', Work Sans;
+ }
